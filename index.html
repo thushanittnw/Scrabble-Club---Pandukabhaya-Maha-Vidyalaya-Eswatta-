@@ -686,9 +686,141 @@ START LEARNING
     function saveMyWord(word) {
    ...
 }
+function saveMyWord(word) {
+  let myWords =
+    JSON.parse(localStorage.getItem("myScrabbleWords") || "[]");
+
+  if (!myWords.includes(word)) {
+    myWords.push(word);
+
+    localStorage.setItem(
+      "myScrabbleWords",
+      JSON.stringify(myWords)
+    );
+
+    alert(word + " was added to My Words ⭐");
+  } else {
+    alert(word + " is already in My Words.");
+  }
+
+  displayMyWords();
+}
 
 function displayMyWords() {
-   ...
+  const list = document.getElementById("myWordsList");
+
+  if (!list) return;
+
+  const myWords =
+    JSON.parse(localStorage.getItem("myScrabbleWords") || "[]");
+
+  if (myWords.length === 0) {
+    list.innerHTML =
+      "<p>No words have been added to My Words yet.</p>";
+    return;
+  }
+
+  const savedVocabulary = myWords
+    .map(function(word) {
+      return vocabulary.find(function(item) {
+        return item.word.toLowerCase() === word.toLowerCase();
+      });
+    })
+    .filter(function(item) {
+      return item;
+    });
+
+  list.innerHTML = savedVocabulary.map(function(item) {
+    return `
+      <div class="word-card">
+
+        <div class="word-title">
+          ${item.word}
+        </div>
+
+        <span class="part-of-speech">
+          ${item.pos}
+        </span>
+
+        <div class="meaning">
+          <strong>Simple meaning:</strong>
+          ${item.meaning}
+        </div>
+
+        <div class="example">
+          <strong>Example:</strong>
+          ${item.example}
+        </div>
+
+        ${
+          item.sinhala
+            ? `<div class="sinhala">
+                🇱🇰 <strong>Sinhala:</strong> ${item.sinhala}
+              </div>`
+            : ""
+        }
+
+        <div class="word-actions">
+
+          <button
+            class="small-button"
+            onclick="speakWord('${item.word}')">
+            🔊 Pronunciation
+          </button>
+
+          <button
+            class="small-button light"
+            onclick="practiceSpecific('${item.word}')">
+            🧠 Practise
+          </button>
+
+          <button
+            class="small-button"
+            onclick="removeMyWord('${item.word}')">
+            ❌ Remove
+          </button>
+
+        </div>
+
+      </div>
+    `;
+  }).join("");
+}
+
+function removeMyWord(word) {
+  let myWords =
+    JSON.parse(localStorage.getItem("myScrabbleWords") || "[]");
+
+  myWords = myWords.filter(function(item) {
+    return item.toLowerCase() !== word.toLowerCase();
+  });
+
+  localStorage.setItem(
+    "myScrabbleWords",
+    JSON.stringify(myWords)
+  );
+
+  displayMyWords();
+}
+
+function practiceSpecific(word) {
+  const item = vocabulary.find(function(v) {
+    return v.word.toLowerCase() === word.toLowerCase();
+  });
+
+  if (!item) return;
+
+  currentPracticeWord = item;
+
+  document.getElementById("practiceWord").textContent =
+    item.word;
+
+  document.getElementById("practiceAnswer").textContent =
+    "Think about the meaning, then press SHOW ANSWER.";
+
+  document.getElementById("practice").scrollIntoView({
+    behavior: "smooth"
+  });
 }
 
 function removeMyWord(word) {
