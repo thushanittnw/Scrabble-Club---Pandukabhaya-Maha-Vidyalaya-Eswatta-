@@ -4,49 +4,60 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Scrabble Club - Pandukabhaya Maha Vidyalaya</title>
-
   <style>
+    * {
+      box-sizing: border-box;
+    }
     body {
       font-family: Arial, sans-serif;
       margin: 0;
       background: #f4f7fb;
       color: #172033;
     }
-
     header {
       background: #17365d;
       color: white;
       text-align: center;
       padding: 30px 15px;
     }
-
     header h1 {
       margin: 0 0 8px;
       font-size: 28px;
     }
-
     header p {
       margin: 0;
       font-size: 16px;
     }
-
+    nav {
+      background: #102944;
+      text-align: center;
+      padding: 12px 8px;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 8px;
+      font-size: 14px;
+      font-weight: bold;
+    }
     .hero {
       background: white;
       text-align: center;
       padding: 45px 20px;
     }
-
     .hero h2 {
       font-size: 30px;
       margin-bottom: 15px;
     }
-
     .hero p {
-      max-width: 650px;
+      max-width: 700px;
       margin: auto;
       color: #566176;
+      line-height: 1.6;
     }
-
     .button {
       display: inline-block;
       margin-top: 25px;
@@ -56,159 +67,708 @@
       text-decoration: none;
       border-radius: 8px;
       font-weight: bold;
+      border: none;
+      cursor: pointer;
     }
-
+    .button.secondary {
+      background: #e8eef7;
+      color: #17365d;
+    }
     .section {
       max-width: 1000px;
       margin: auto;
-      padding: 35px 20px;
+      padding: 40px 20px;
     }
-
     .section h2 {
       text-align: center;
       margin-bottom: 25px;
     }
-
+    .section-intro {
+      max-width: 750px;
+      margin: 0 auto 25px;
+      text-align: center;
+      color: #596579;
+      line-height: 1.6;
+    }
     .cards {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 18px;
     }
-
     .card {
       background: white;
       padding: 22px;
       border-radius: 12px;
       box-shadow: 0 3px 12px rgba(0,0,0,0.08);
     }
-
     .card h3 {
       color: #17365d;
     }
-
     .card p {
       color: #596579;
+      line-height: 1.6;
     }
-
+    .vocabulary-box {
+      background: white;
+      border-radius: 14px;
+      padding: 25px;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+      margin-bottom: 25px;
+    }
+    .filters {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 12px;
+      margin-bottom: 25px;
+    }
+    select,
+    input,
+    textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccd4e0;
+      border-radius: 8px;
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      background: white;
+    }
+    textarea {
+      min-height: 90px;
+      resize: vertical;
+    }
+    .word-card {
+      border: 1px solid #e0e5ec;
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 15px;
+      background: #fbfcfe;
+    }
+    .word-title {
+      font-size: 28px;
+      color: #17365d;
+      margin-bottom: 5px;
+    }
+    .part-of-speech {
+      display: inline-block;
+      background: #e8eef7;
+      color: #17365d;
+      padding: 5px 9px;
+      border-radius: 20px;
+      font-size: 12px;
+      margin-bottom: 12px;
+    }
+    .meaning {
+      font-size: 17px;
+      line-height: 1.5;
+    }
+    .example {
+      background: #f0f5fa;
+      padding: 12px;
+      border-radius: 8px;
+      margin-top: 12px;
+      font-style: italic;
+    }
+    .sinhala {
+      margin-top: 10px;
+      font-size: 17px;
+    }
+    .word-actions {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 15px;
+    }
+    .small-button {
+      padding: 9px 12px;
+      border: none;
+      border-radius: 7px;
+      background: #17365d;
+      color: white;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .small-button.light {
+      background: #e8eef7;
+      color: #17365d;
+    }
+    .picture-box {
+      background: #eef3f8;
+      min-height: 130px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 15px;
+      overflow: hidden;
+      color: #66758a;
+    }
+    .picture-box img {
+      width: 100%;
+      max-height: 180px;
+      object-fit: cover;
+    }
+    .source-note {
+      font-size: 12px;
+      color: #68758a;
+      margin-top: 12px;
+    }
+    .teacher-panel {
+      background: #fffdf4;
+      border: 2px solid #eadca5;
+      border-radius: 14px;
+      padding: 25px;
+    }
+    .teacher-panel h3 {
+      color: #17365d;
+    }
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 15px;
+    }
+    .form-group {
+      margin-bottom: 15px;
+    }
+    .form-group label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 6px;
+      font-size: 14px;
+    }
+    .privacy-note {
+      background: #eef6ee;
+      border-left: 5px solid #4d8055;
+      padding: 15px;
+      border-radius: 8px;
+      margin-top: 20px;
+      line-height: 1.6;
+    }
+    .notice {
+      background: #fff4e5;
+      border-left: 5px solid #d98a18;
+      padding: 15px;
+      border-radius: 8px;
+      line-height: 1.6;
+    }
+    .practice-box {
+      text-align: center;
+      background: white;
+      padding: 30px 20px;
+      border-radius: 14px;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+    }
+    #practiceWord {
+      font-size: 36px;
+      font-weight: bold;
+      color: #17365d;
+      margin: 20px;
+    }
+    #practiceAnswer {
+      margin-top: 15px;
+      color: #566176;
+      line-height: 1.6;
+    }
     footer {
       background: #17365d;
       color: white;
       text-align: center;
       padding: 25px 15px;
+      margin-top: 30px;
+    }
+    @media (max-width: 600px) {
+      .hero h2 {
+        font-size: 25px;
+      }
+      nav a {
+        display: inline-block;
+        margin: 5px;
+      }
     }
   </style>
 </head>
-
 <body>
+<header>
+  <h1>Scrabble Club</h1>
+  <p>Pandukabhaya Maha Vidyalaya - Eswatta</p>
+</header>
+<nav>
+  <a href="#lessons">Lessons</a>
+  <a href="#vocabulary">Vocabulary</a>
+  <a href="#practice">Practice</a>
+  <a href="#teacher">Teacher</a>
+</nav>
+<section class="hero">
+  <h2>Learn English Through Scrabble</h2>
+  <p>
+    Discover useful English words, learn their meanings,
+    hear their pronunciation, practise using them and
+    improve your Scrabble skills at the same time.
+  </p>
 
-  <header>
-    <h1>Scrabble Club</h1>
-    <p>Pandukabhaya Maha Vidyalaya - Eswatta</p>
-  </header>
+START LEARNING
 
-  <section class="hero">
-    <h2>Learn Scrabble. Build Words. Play Better.</h2>
-
-    <p>
-      A free learning platform for students to learn
-      Scrabble rules, competitive words, scoring and
-      strategy through practice and gameplay.
-    </p>
-
-    <a href="#lessons" class="button">START LEARNING</a>
-  </section>
-
-  <section class="section" id="lessons">
-
-    <h2>What You Can Learn</h2>
-
-    <div class="cards">
-
-      <div class="card">
-        <h3>📚 Scrabble Rules</h3>
-        <p>
-          Learn the board, tiles, word placement,
-          turns, exchanges, challenges and game ending.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>🔤 Competitive Words</h3>
-        <p>
-          Learn useful short words, hooks,
-          extensions, anagrams and word patterns.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>⭐ Scoring</h3>
-        <p>
-          Learn letter values, premium squares
-          and how to calculate scores.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>🧠 Word Practice</h3>
-        <p>
-          Practise anagrams, hooks, extensions
-          and difficult letters.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>🎯 Play & Learn</h3>
-        <p>
-          Practise on an interactive Scrabble board
-          while learning from your moves.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>🏆 Improve Your Game</h3>
-        <p>
-          Develop vocabulary, scoring skills,
-          rack management and strategy.
-        </p>
-      </div>
-
-    </div>
-  </section>
-
-  <section class="section">
-
-    <h2>Your Learning Journey</h2>
-
-    <div class="cards">
-
-      <div class="card">
-        <h3>1. Learn</h3>
-        <p>Understand the basic rules.</p>
-      </div>
-
-      <div class="card">
-        <h3>2. Practise</h3>
-        <p>Try word and scoring activities.</p>
-      </div>
-
-      <div class="card">
-        <h3>3. Play</h3>
-        <p>Use what you learned in practice games.</p>
-      </div>
-
-      <div class="card">
-        <h3>4. Improve</h3>
-        <p>Build competitive vocabulary and strategy.</p>
-      </div>
-
-    </div>
-
-  </section>
-
-  <footer>
-    <p>Scrabble Club - Pandukabhaya Maha Vidyalaya, Eswatta</p>
-    <p>Free educational resource for students</p>
-  </footer>
-
+</section>
+<section class="section" id="lessons">
+  <h2>What You Can Learn</h2>
+  <p class="section-intro">
+    Scrabble is used here as a fun way to encourage English
+    language learning. The learning vocabulary focuses on
+    useful English for Sri Lankan school students.
+  </p>
+  <div class="cards">
+<div class="card">
+  <h3>📚 Scrabble Rules</h3>
+  <p>
+    Learn the board, tiles, word placement,
+    turns, exchanges, challenges and scoring.
+  </p>
+</div>
+<div class="card">
+  <h3>📖 Learn Words</h3>
+  <p>
+    Discover useful everyday, school and
+    syllabus-related English vocabulary.
+  </p>
+</div>
+<div class="card">
+  <h3>🖼️ See & Understand</h3>
+  <p>
+    Learn words with simple meanings,
+    pictures and easy example sentences.
+  </p>
+</div>
+<div class="card">
+  <h3>🔊 Hear Words</h3>
+  <p>
+    Listen to pronunciation and practise
+    saying new English words.
+  </p>
+</div>
+<div class="card">
+  <h3>🧠 Practise</h3>
+  <p>
+    Test your memory and practise using
+    new vocabulary.
+  </p>
+</div>
+<div class="card">
+  <h3>🎯 Play & Learn</h3>
+  <p>
+    Use Scrabble-style activities to discover
+    and remember useful English words.
+  </p>
+</div>
+  </div>
+</section>
+<section class="section" id="vocabulary">
+  <h2>📖 English Vocabulary</h2>
+  <p class="section-intro">
+    Our vocabulary focuses on useful English for students.
+    Words are taught with simple A1-level explanations.
+  </p>
+  <div class="notice">
+    <strong>Our dictionary principle:</strong>
+    This learning system does not depend on a commercial
+    Scrabble dictionary. Vocabulary is selected and curated
+    for English learning. Teachers may add words using
+    legally permitted references and their own teaching
+    materials.
+  </div>
+  <br>
+  <div class="vocabulary-box">
+<div class="filters">
+  <select id="gradeFilter" onchange="displayWords()">
+    <option value="all">All Grades</option>
+    <option value="6">Grade 6</option>
+    <option value="7">Grade 7</option>
+    <option value="8">Grade 8</option>
+    <option value="9">Grade 9</option>
+    <option value="10">Grade 10</option>
+    <option value="11">Grade 11</option>
+    <option value="OL">O/L</option>
+  </select>
+  <select id="topicFilter" onchange="displayWords()">
+    <option value="all">All Topics</option>
+    <option value="Family">Family</option>
+    <option value="School">School</option>
+    <option value="Food">Food</option>
+    <option value="Animals">Animals</option>
+    <option value="Nature">Nature</option>
+    <option value="Daily activities">Daily activities</option>
+    <option value="Feelings">Feelings</option>
+    <option value="Places">Places</option>
+    <option value="Jobs">Jobs</option>
+    <option value="Hobbies">Hobbies</option>
+    <option value="Travel">Travel</option>
+    <option value="Health">Health</option>
+    <option value="Environment">Environment</option>
+    <option value="O/L English">O/L English</option>
+  </select>
+  <select id="difficultyFilter" onchange="displayWords()">
+    <option value="all">All Levels</option>
+    <option value="A1">A1</option>
+    <option value="A2">A2</option>
+    <option value="B1">B1</option>
+  </select>
+</div>
+<div id="wordList"></div>
+  </div>
+</section>
+<section class="section" id="practice">
+  <h2>🧠 Word Practice</h2>
+  <div class="practice-box">
+<p>Can you remember the meaning of this word?</p>
+<div id="practiceWord">Click Start Practice</div>
+<button class="button" onclick="startPractice()">
+  START PRACTICE
+</button>
+<button class="button secondary" onclick="showPracticeAnswer()">
+  SHOW ANSWER
+</button>
+<div id="practiceAnswer"></div>
+  </div>
+</section>
+<section class="section" id="teacher">
+  <h2>👩‍🏫 Teacher Vocabulary Manager</h2>
+  <div class="teacher-panel">
+<h3>Add a Learning Word</h3>
+<p>
+  Teachers can manually add and curate vocabulary.
+  Only vocabulary that the teacher is authorized to use
+  should be added.
+</p>
+<div class="form-grid">
+  <div class="form-group">
+    <label>Word</label>
+    <input id="wordInput" type="text" placeholder="Example: brave">
+  </div>
+  <div class="form-group">
+    <label>Simple English Meaning</label>
+    <input id="meaningInput" type="text" placeholder="Example: Not afraid">
+  </div>
+  <div class="form-group">
+    <label>Sinhala Meaning</label>
+    <input id="sinhalaInput" type="text" placeholder="Optional">
+  </div>
+  <div class="form-group">
+    <label>Part of Speech</label>
+    <select id="posInput">
+      <option>Noun</option>
+      <option>Verb</option>
+      <option>Adjective</option>
+      <option>Adverb</option>
+      <option>Pronoun</option>
+      <option>Preposition</option>
+      <option>Conjunction</option>
+      <option>Other</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label>Grade</label>
+    <select id="gradeInput">
+      <option>6</option>
+      <option>7</option>
+      <option>8</option>
+      <option>9</option>
+      <option>10</option>
+      <option>11</option>
+      <option>OL</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label>Difficulty</label>
+    <select id="difficultyInput">
+      <option>A1</option>
+      <option>A2</option>
+      <option>B1</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label>Topic</label>
+    <select id="topicInput">
+      <option>Family</option>
+      <option>School</option>
+      <option>Food</option>
+      <option>Animals</option>
+      <option>Nature</option>
+      <option>Daily activities</option>
+      <option>Feelings</option>
+      <option>Places</option>
+      <option>Jobs</option>
+      <option>Hobbies</option>
+      <option>Travel</option>
+      <option>Health</option>
+      <option>Environment</option>
+      <option>O/L English</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label>Vocabulary Source</label>
+    <select id="sourceInput">
+      <option>Teacher Added</option>
+      <option>Malalasekara Reference</option>
+      <option>Madura Reference</option>
+      <option>School/Syllabus Vocabulary</option>
+      <option>Other legally permitted source</option>
+    </select>
+  </div>
+</div>
+<div class="form-group">
+  <label>Simple Example Sentence</label>
+  <textarea id="exampleInput" placeholder="Example: The boy is brave."></textarea>
+</div>
+<div class="form-group">
+  <label>Picture URL (optional)</label>
+  <input id="pictureInput" type="url" placeholder="https://example.com/picture.jpg">
+</div>
+<button class="button" onclick="addWord()">
+  ➕ ADD WORD
+</button>
+<div class="privacy-note">
+  <strong>Copyright & data protection:</strong><br>
+  Do not copy, scrape or redistribute complete proprietary
+  dictionary databases. Use legally permitted information
+  and add only vocabulary that the teacher is authorized
+  to use.
+</div>
+  </div>
+</section>
+<footer>
+  <p>Scrabble Club - Pandukabhaya Maha Vidyalaya, Eswatta</p>
+  <p>Free educational resource for students</p>
+</footer>
+<script>
+  let vocabulary = [
+    {
+      word: "brave",
+      meaning: "Not afraid.",
+      sinhala: "නිර්භීත",
+      pos: "Adjective",
+      example: "The boy is brave.",
+      picture: "",
+      grade: "6",
+      difficulty: "A1",
+      source: "Teacher Added",
+      topic: "Feelings"
+    },
+    {
+      word: "school",
+      meaning: "A place where students learn.",
+      sinhala: "පාසල",
+      pos: "Noun",
+      example: "I go to school every day.",
+      picture: "",
+      grade: "6",
+      difficulty: "A1",
+      source: "School/Syllabus Vocabulary",
+      topic: "School"
+    },
+    {
+      word: "happy",
+      meaning: "Feeling good and pleased.",
+      sinhala: "සතුටු",
+      pos: "Adjective",
+      example: "She is happy today.",
+      picture: "",
+      grade: "6",
+      difficulty: "A1",
+      source: "Teacher Added",
+      topic: "Feelings"
+    }
+  ];
+  const savedWords = localStorage.getItem("scrabbleClubVocabulary");
+  if (savedWords) {
+    vocabulary = JSON.parse(savedWords);
+  }
+  let currentPracticeWord = null;
+  function displayWords() {
+    const grade = document.getElementById("gradeFilter").value;
+    const topic = document.getElementById("topicFilter").value;
+    const difficulty = document.getElementById("difficultyFilter").value;
+    const filtered = vocabulary.filter(function(item) {
+      return (
+        (grade === "all" || item.grade === grade) &&
+        (topic === "all" || item.topic === topic) &&
+        (difficulty === "all" || item.difficulty === difficulty)
+      );
+    });
+    const list = document.getElementById("wordList");
+    if (filtered.length === 0) {
+      list.innerHTML =
+        "<p>No words have been added for these selections yet.</p>";
+      return;
+    }
+    list.innerHTML = filtered.map(function(item, index) {
+      const pictureHTML = item.picture
+        ? '<img src="' + item.picture + '" alt="' + item.word + '">'
+        : "🖼️ Picture";
+      return `
+        <div class="word-card">
+          <div class="picture-box">
+            ${pictureHTML}
+          </div>
+          <div class="word-title">${item.word}</div>
+          <span class="part-of-speech">
+            ${item.pos}
+          </span>
+          <div class="meaning">
+            <strong>Simple meaning:</strong>
+            ${item.meaning}
+          </div>
+          <div class="example">
+            <strong>Example:</strong>
+            ${item.example}
+          </div>
+          ${
+            item.sinhala
+            ? `<div class="sinhala">
+                🇱🇰 <strong>Sinhala:</strong> ${item.sinhala}
+              </div>`
+            : ""
+          }
+          <div class="source-note">
+            Grade: ${item.grade} |
+            Level: ${item.difficulty} |
+            Topic: ${item.topic}<br>
+            Vocabulary Source: ${item.source}
+          </div>
+          <div class="word-actions">
+            <button class="small-button"
+              onclick="speakWord('${item.word}')">
+              🔊 Pronunciation
+            </button>
+            <button class="small-button light"
+              onclick="saveMyWord('${item.word}')">
+              ⭐ Add to My Words
+            </button>
+            <button class="small-button light"
+              onclick="practiceSpecific('${item.word}')">
+              🧠 Practise
+            </button>
+          </div>
+        </div>
+      `;
+    }).join("");
+  }
+  function speakWord(word) {
+    if ("speechSynthesis" in window) {
+      const speech = new SpeechSynthesisUtterance(word);
+      speech.lang = "en-US";
+      speech.rate = 0.8;
+      window.speechSynthesis.speak(speech);
+    } else {
+      alert("Pronunciation is not supported by this browser.");
+    }
+  }
+  function saveMyWord(word) {
+    let myWords =
+      JSON.parse(localStorage.getItem("myScrabbleWords") || "[]");
+    if (!myWords.includes(word)) {
+      myWords.push(word);
+      localStorage.setItem(
+        "myScrabbleWords",
+        JSON.stringify(myWords)
+      );
+      alert(word + " was added to My Words ⭐");
+    } else {
+      alert(word + " is already in My Words.");
+    }
+  }
+  function practiceSpecific(word) {
+    const item = vocabulary.find(function(v) {
+      return v.word.toLowerCase() === word.toLowerCase();
+    });
+    if (!item) return;
+    currentPracticeWord = item;
+    document.getElementById("practiceWord").textContent =
+      item.word;
+    document.getElementById("practiceAnswer").textContent =
+      "Think about the meaning, then press SHOW ANSWER.";
+    document.getElementById("practice").scrollIntoView({
+      behavior: "smooth"
+    });
+  }
+  function startPractice() {
+    if (vocabulary.length === 0) return;
+    currentPracticeWord =
+      vocabulary[Math.floor(Math.random() * vocabulary.length)];
+    document.getElementById("practiceWord").textContent =
+      currentPracticeWord.word;
+    document.getElementById("practiceAnswer").textContent =
+      "Think about the meaning, then press SHOW ANSWER.";
+  }
+  function showPracticeAnswer() {
+    if (!currentPracticeWord) {
+      alert("Please start practice first.");
+      return;
+    }
+    document.getElementById("practiceAnswer").innerHTML =
+      "<strong>Meaning:</strong> " +
+      currentPracticeWord.meaning +
+      "<br><br><strong>Example:</strong> " +
+      currentPracticeWord.example +
+      (
+        currentPracticeWord.sinhala
+        ? "<br><br>🇱🇰 <strong>Sinhala:</strong> " +
+          currentPracticeWord.sinhala
+        : ""
+      );
+  }
+  function addWord() {
+    const word =
+      document.getElementById("wordInput").value.trim();
+    const meaning =
+      document.getElementById("meaningInput").value.trim();
+    const sinhala =
+      document.getElementById("sinhalaInput").value.trim();
+    const pos =
+      document.getElementById("posInput").value;
+    const grade =
+      document.getElementById("gradeInput").value;
+    const difficulty =
+      document.getElementById("difficultyInput").value;
+    const topic =
+      document.getElementById("topicInput").value;
+    const source =
+      document.getElementById("sourceInput").value;
+    const example =
+      document.getElementById("exampleInput").value.trim();
+    const picture =
+      document.getElementById("pictureInput").value.trim();
+    if (!word || !meaning || !example) {
+      alert(
+        "Please enter the word, simple meaning and example sentence."
+      );
+      return;
+    }
+    const newWord = {
+      word: word,
+      meaning: meaning,
+      sinhala: sinhala,
+      pos: pos,
+      example: example,
+      picture: picture,
+      grade: grade,
+      difficulty: difficulty,
+      source: source,
+      topic: topic
+    };
+    vocabulary.push(newWord);
+    localStorage.setItem(
+      "scrabbleClubVocabulary",
+      JSON.stringify(vocabulary)
+    );
+    document.getElementById("wordInput").value = "";
+    document.getElementById("meaningInput").value = "";
+    document.getElementById("sinhalaInput").value = "";
+    document.getElementById("exampleInput").value = "";
+    document.getElementById("pictureInput").value = "";
+    displayWords();
+    alert(
+      word + " has been added to the learning vocabulary."
+    );
+  }
+  displayWords();
+</script>
 </body>
 </html>
