@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>English Learning Club - Pandukabhaya Maha Vidyalaya</title>
+  <title>Scrabble Club - Pandukabhaya Maha Vidyalaya</title>
   <style>
     * {
       box-sizing: border-box;
@@ -147,7 +147,6 @@
       font-size: 28px;
       color: #17365d;
       margin-bottom: 5px;
-      word-break: break-word;
     }
     .part-of-speech {
       display: inline-block;
@@ -288,273 +287,320 @@
   </style>
 </head>
 <body>
-
 <header>
-  <h1>English Learning Club</h1>
+  <h1>Scrabble Club</h1>
   <p>Pandukabhaya Maha Vidyalaya - Eswatta</p>
 </header>
-
 <nav>
-  <a href="#lessons">Lessons</a>
-  <a href="#vocabulary">Vocabulary</a>
-  <a href="#practice">Practice</a>
-  <a href="#mywords">⭐ My Words</a>
-  <a href="#teacher">Teacher</a>
+ <a href="#lessons">Lessons</a>
+<a href="#vocabulary">Vocabulary</a>
+<a href="#practice">Practice</a>
+<a href="#mywords">⭐ My Words</a>
+<a href="#teacher">Teacher</a>
 </nav>
-
 <section class="hero">
-  <h2>Empower Your English Skills</h2>
+  <h2>Learn English Through Scrabble</h2>
   <p>
-    Discover useful English words, learn their meanings, hear accurate pronunciation,
-    practise writing sentences, and excel in your English exams.
+    Discover useful English words, learn their meanings,
+    hear their pronunciation, practise using them and
+    improve your Scrabble skills at the same time.
   </p>
-  <a class="button" href="#vocabulary">START LEARNING</a>
-</section>
 
+  <a class="button" href="#vocabulary">START LEARNING</a>
+
+</section>
 <section class="section" id="lessons">
   <h2>What You Can Learn</h2>
   <p class="section-intro">
-    Our lessons focus on curriculum-aligned English vocabulary tailored specifically
-    for Sri Lankan school students from Grade 6 to Ordinary Level.
+    Scrabble is used here as a fun way to encourage English
+    language learning. The learning vocabulary focuses on
+    useful English for Sri Lankan school students.
   </p>
   <div class="cards">
-    <div class="card">
-      <h3>📚 Syllabus Words</h3>
-      <p>Master key English vocabulary aligned with Grade 6 through O/L school textbooks.</p>
-    </div>
-    <div class="card">
-      <h3>📖 Simple Definitions</h3>
-      <p>Understand meanings easily with clear, beginner-friendly A1-level explanations.</p>
-    </div>
-    <div class="card">
-      <h3>🇱🇰 Sinhala Support</h3>
-      <p>Reinforce your understanding with optional Sinhala translation references.</p>
-    </div>
-    <div class="card">
-      <h3>🔊 Native Audio</h3>
-      <p>Listen to standard English pronunciation with built-in voice playback.</p>
-    </div>
-    <div class="card">
-      <h3>🧠 Memory Drills</h3>
-      <p>Interactive practice drills designed to test your recall and vocabulary speed.</p>
-    </div>
-    <div class="card">
-      <h3>⭐ Custom Flashcards</h3>
-      <p>Save challenging words into your personal revision list for focused studying.</p>
-    </div>
+<div class="card">
+  <h3>📚 Scrabble Rules</h3>
+  <p>
+    Learn the board, tiles, word placement,
+    turns, exchanges, challenges and scoring.
+  </p>
+</div>
+<div class="card">
+  <h3>📖 Learn Words</h3>
+  <p>
+    Discover useful everyday, school and
+    syllabus-related English vocabulary.
+  </p>
+</div>
+<div class="card">
+  <h3>🖼️ See & Understand</h3>
+  <p>
+    Learn words with simple meanings,
+    pictures and easy example sentences.
+  </p>
+</div>
+<div class="card">
+  <h3>🔊 Hear Words</h3>
+  <p>
+    Listen to pronunciation and practise
+    saying new English words.
+  </p>
+</div>
+<div class="card">
+  <h3>🧠 Practise</h3>
+  <p>
+    Test your memory and practise using
+    new vocabulary.
+  </p>
+</div>
+<div class="card">
+  <h3>🎯 Play & Learn</h3>
+  <p>
+    Use Scrabble-style activities to discover
+    and remember useful English words.
+  </p>
+</div>
   </div>
 </section>
-
 <section class="section" id="vocabulary">
   <h2>📖 English Vocabulary</h2>
   <p class="section-intro">
-    Explore vocabulary curated for everyday learning and school examinations.
+    Our vocabulary focuses on useful English for students.
+    Words are taught with simple A1-level explanations.
   </p>
   <div class="notice">
-    <strong>Curriculum Notice:</strong>
-    This learning portal provides teacher-curated vocabulary and standard educational references.
-    Teachers can regularly add and update words according to term plans and syllabus guidelines.
+    <strong>Our dictionary principle:</strong>
+    This learning system does not depend on a commercial
+    Scrabble dictionary. Vocabulary is selected and curated
+    for English learning. Teachers may add words using
+    legally permitted references and their own teaching
+    materials.
   </div>
   <br>
   <div class="vocabulary-box">
-    <div class="filters">
-      <input id="wordSearch" type="search" placeholder="Search words or meanings..." oninput="displayWords()">
-      <select id="gradeFilter" onchange="displayWords()">
-        <option value="all">All Grades</option>
-        <option value="6">Grade 6</option>
-        <option value="7">Grade 7</option>
-        <option value="8">Grade 8</option>
-        <option value="9">Grade 9</option>
-        <option value="10">Grade 10</option>
-        <option value="11">Grade 11</option>
-        <option value="OL">O/L</option>
-      </select>
-      <select id="topicFilter" onchange="displayWords()">
-        <option value="all">All Topics</option>
-        <option value="Family">Family</option>
-        <option value="School">School</option>
-        <option value="Food">Food</option>
-        <option value="Animals">Animals</option>
-        <option value="Nature">Nature</option>
-        <option value="Daily activities">Daily activities</option>
-        <option value="Feelings">Feelings</option>
-        <option value="Places">Places</option>
-        <option value="Jobs">Jobs</option>
-        <option value="Hobbies">Hobbies</option>
-        <option value="Travel">Travel</option>
-        <option value="Health">Health</option>
-        <option value="Environment">Environment</option>
-        <option value="O/L English">O/L English</option>
-      </select>
-      <select id="difficultyFilter" onchange="displayWords()">
-        <option value="all">All Levels</option>
-        <option value="A1">A1 (Beginner)</option>
-        <option value="A2">A2 (Elementary)</option>
-        <option value="B1">B1 (Intermediate)</option>
-      </select>
-    </div>
-    <div id="wordList"></div>
+<div class="filters">
+  <input id="wordSearch" type="search" placeholder="Search words..." oninput="displayWords()">
+  <select id="gradeFilter" onchange="displayWords()">
+    <option value="all">All Grades</option>
+    <option value="6">Grade 6</option>
+    <option value="7">Grade 7</option>
+    <option value="8">Grade 8</option>
+    <option value="9">Grade 9</option>
+    <option value="10">Grade 10</option>
+    <option value="11">Grade 11</option>
+    <option value="OL">O/L</option>
+  </select>
+  <select id="topicFilter" onchange="displayWords()">
+    <option value="all">All Topics</option>
+    <option value="Family">Family</option>
+    <option value="School">School</option>
+    <option value="Food">Food</option>
+    <option value="Animals">Animals</option>
+    <option value="Nature">Nature</option>
+    <option value="Daily activities">Daily activities</option>
+    <option value="Feelings">Feelings</option>
+    <option value="Places">Places</option>
+    <option value="Jobs">Jobs</option>
+    <option value="Hobbies">Hobbies</option>
+    <option value="Travel">Travel</option>
+    <option value="Health">Health</option>
+    <option value="Environment">Environment</option>
+    <option value="O/L English">O/L English</option>
+  </select>
+  <select id="difficultyFilter" onchange="displayWords()">
+    <option value="all">All Levels</option>
+    <option value="A1">A1</option>
+    <option value="A2">A2</option>
+    <option value="B1">B1</option>
+  </select>
+</div>
+<div id="wordList"></div>
   </div>
 </section>
-
 <section class="section" id="practice">
   <h2>🧠 Word Practice</h2>
+
   <div class="practice-box">
-    <p>Test yourself: Can you recall the meaning of this word?</p>
-    <div id="practiceWord">Click Start Practice</div>
-    <button class="button" onclick="startPractice()">START PRACTICE</button>
-    <button class="button secondary" onclick="showPracticeAnswer()">SHOW ANSWER</button>
+    <p>Can you remember the meaning of this word?</p>
+
+    <div id="practiceWord">
+      Click Start Practice
+    </div>
+
+    <button class="button" onclick="startPractice()">
+      START PRACTICE
+    </button>
+
+    <button class="button secondary" onclick="showPracticeAnswer()">
+      SHOW ANSWER
+    </button>
+
     <div id="practiceAnswer"></div>
   </div>
 </section>
 
 <section class="section" id="mywords">
   <h2>⭐ My Words</h2>
-  <p class="section-intro">Your personal revision list saved for extra practice.</p>
+
+  <p class="section-intro">
+    Words you have saved for learning and practice.
+  </p>
+
   <div class="vocabulary-box">
     <div id="myWordsList">
-      <p>No words saved yet. Click "⭐ Add to My Words" on any card to save it here.</p>
+      <p>No words have been added to My Words yet.</p>
     </div>
   </div>
 </section>
-
 <section class="section" id="teacher">
   <h2>👩‍🏫 Teacher Vocabulary Manager</h2>
   <div class="teacher-panel">
-    <h3>Add a New Word</h3>
-    <p>Teachers can add and edit learning vocabulary for student study materials.</p>
-    <div class="form-grid">
-      <div class="form-group">
-        <label>Word</label>
-        <input id="wordInput" type="text" placeholder="Example: persistent">
-      </div>
-      <div class="form-group">
-        <label>Simple English Meaning</label>
-        <input id="meaningInput" type="text" placeholder="Example: Continuing without giving up">
-      </div>
-      <div class="form-group">
-        <label>Sinhala Meaning</label>
-        <input id="sinhalaInput" type="text" placeholder="Example: නොපසුබට">
-      </div>
-      <div class="form-group">
-        <label>Part of Speech</label>
-        <select id="posInput">
-          <option>Noun</option>
-          <option>Verb</option>
-          <option>Adjective</option>
-          <option>Adverb</option>
-          <option>Pronoun</option>
-          <option>Preposition</option>
-          <option>Conjunction</option>
-          <option>Other</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label>Grade</label>
-        <select id="gradeInput">
-          <option>6</option>
-          <option>7</option>
-          <option>8</option>
-          <option>9</option>
-          <option>10</option>
-          <option>11</option>
-          <option>OL</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label>Difficulty</label>
-        <select id="difficultyInput">
-          <option>A1</option>
-          <option>A2</option>
-          <option>B1</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label>Topic</label>
-        <select id="topicInput">
-          <option>Family</option>
-          <option>School</option>
-          <option>Food</option>
-          <option>Animals</option>
-          <option>Nature</option>
-          <option>Daily activities</option>
-          <option>Feelings</option>
-          <option>Places</option>
-          <option>Jobs</option>
-          <option>Hobbies</option>
-          <option>Travel</option>
-          <option>Health</option>
-          <option>Environment</option>
-          <option>O/L English</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label>Vocabulary Source</label>
-        <select id="sourceInput">
-          <option>Teacher Added</option>
-          <option>School Syllabus</option>
-          <option>General Reference</option>
-        </select>
-      </div>
-    </div>
-    <div class="form-group">
-      <label>Simple Example Sentence</label>
-      <textarea id="exampleInput" placeholder="Example: She was persistent in her studies."></textarea>
-    </div>
-    <div class="form-group">
-      <label>Picture URL (optional)</label>
-      <input id="pictureInput" type="url" placeholder="https://example.com/image.jpg">
-    </div>
-    <button class="button" onclick="addWord()">➕ ADD WORD</button>
-    <div class="privacy-note">
-      <strong>Usage Guidelines:</strong><br>
-      Ensure content added complies with school curriculum standards and copyright policies.
-    </div>
+<h3>Add a Learning Word</h3>
+<p>
+  Teachers can manually add and curate vocabulary.
+  Only vocabulary that the teacher is authorized to use
+  should be added.
+</p>
+<div class="form-grid">
+  <div class="form-group">
+    <label>Word</label>
+    <input id="wordInput" type="text" placeholder="Example: brave">
+  </div>
+  <div class="form-group">
+    <label>Simple English Meaning</label>
+    <input id="meaningInput" type="text" placeholder="Example: Not afraid">
+  </div>
+  <div class="form-group">
+    <label>Sinhala Meaning</label>
+    <input id="sinhalaInput" type="text" placeholder="Optional">
+  </div>
+  <div class="form-group">
+    <label>Part of Speech</label>
+    <select id="posInput">
+      <option>Noun</option>
+      <option>Verb</option>
+      <option>Adjective</option>
+      <option>Adverb</option>
+      <option>Pronoun</option>
+      <option>Preposition</option>
+      <option>Conjunction</option>
+      <option>Other</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label>Grade</label>
+    <select id="gradeInput">
+      <option>6</option>
+      <option>7</option>
+      <option>8</option>
+      <option>9</option>
+      <option>10</option>
+      <option>11</option>
+      <option>OL</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label>Difficulty</label>
+    <select id="difficultyInput">
+      <option>A1</option>
+      <option>A2</option>
+      <option>B1</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label>Topic</label>
+    <select id="topicInput">
+      <option>Family</option>
+      <option>School</option>
+      <option>Food</option>
+      <option>Animals</option>
+      <option>Nature</option>
+      <option>Daily activities</option>
+      <option>Feelings</option>
+      <option>Places</option>
+      <option>Jobs</option>
+      <option>Hobbies</option>
+      <option>Travel</option>
+      <option>Health</option>
+      <option>Environment</option>
+      <option>O/L English</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label>Vocabulary Source</label>
+    <select id="sourceInput">
+      <option>Teacher Added</option>
+      <option>Malalasekara Reference</option>
+      <option>Madura Reference</option>
+      <option>School/Syllabus Vocabulary</option>
+      <option>Other legally permitted source</option>
+    </select>
+  </div>
+</div>
+<div class="form-group">
+  <label>Simple Example Sentence</label>
+  <textarea id="exampleInput" placeholder="Example: The boy is brave."></textarea>
+</div>
+<div class="form-group">
+  <label>Picture URL (optional)</label>
+  <input id="pictureInput" type="url" placeholder="https://example.com/picture.jpg">
+</div>
+<button class="button" onclick="addWord()">
+  ➕ ADD WORD
+</button>
+<div class="privacy-note">
+  <strong>Copyright & data protection:</strong><br>
+  Do not copy, scrape or redistribute complete proprietary
+  dictionary databases. Use legally permitted information
+  and add only vocabulary that the teacher is authorized
+  to use.
+</div>
   </div>
 </section>
-
 <footer>
-  <p>English Learning Club - Pandukabhaya Maha Vidyalaya, Eswatta</p>
-  <p>Free Educational Resource for Students</p>
+  <p>Scrabble Club - Pandukabhaya Maha Vidyalaya, Eswatta</p>
+  <p>Free educational resource for students</p>
 </footer>
-
 <script>
+  // -----------------------------
+  // Scrabble Club Vocabulary App
+  // -----------------------------
+
   const defaultVocabulary = [
     {
       word: "brave",
-      meaning: "Not afraid when facing danger or difficulty.",
+      meaning: "Not afraid.",
       sinhala: "නිර්භීත",
       pos: "Adjective",
-      example: "The brave student answered the difficult question.",
+      example: "The boy is brave.",
       picture: "",
       grade: "6",
       difficulty: "A1",
-      source: "School Syllabus",
+      source: "Teacher Added",
       topic: "Feelings"
     },
     {
-      word: "environment",
-      meaning: "The natural world around us including land, air, and water.",
-      sinhala: "පරිසරය",
+      word: "school",
+      meaning: "A place where students learn.",
+      sinhala: "පාසල",
       pos: "Noun",
-      example: "We must protect our natural environment.",
+      example: "I go to school every day.",
       picture: "",
-      grade: "8",
-      difficulty: "A2",
-      source: "School Syllabus",
-      topic: "Environment"
+      grade: "6",
+      difficulty: "A1",
+      source: "School/Syllabus Vocabulary",
+      topic: "School"
     },
     {
-      word: "diligent",
-      meaning: "Working hard with care and effort.",
-      sinhala: "උත්සාහවන්ත",
+      word: "happy",
+      meaning: "Feeling good and pleased.",
+      sinhala: "සතුටු",
       pos: "Adjective",
-      example: "He is a diligent student who studies every evening.",
+      example: "She is happy today.",
       picture: "",
-      grade: "OL",
-      difficulty: "B1",
+      grade: "6",
+      difficulty: "A1",
       source: "Teacher Added",
-      topic: "School"
+      topic: "Feelings"
     }
   ];
 
@@ -563,18 +609,22 @@
 
   function loadVocabulary() {
     try {
-      const saved = localStorage.getItem("englishClubVocabulary");
+      const saved = localStorage.getItem("scrabbleClubVocabulary");
       return saved ? JSON.parse(saved) : [...defaultVocabulary];
     } catch (error) {
-      console.error("Failed to load vocabulary:", error);
+      console.error("Could not load vocabulary:", error);
       return [...defaultVocabulary];
     }
   }
 
   function saveVocabulary() {
-    localStorage.setItem("englishClubVocabulary", JSON.stringify(vocabulary));
+    localStorage.setItem(
+      "scrabbleClubVocabulary",
+      JSON.stringify(vocabulary)
+    );
   }
 
+  // Prevent user-entered HTML from being inserted into the page.
   function escapeHTML(value) {
     return String(value ?? "").replace(/[&<>"']/g, function (char) {
       const entities = {
@@ -603,8 +653,7 @@
     const grade = document.getElementById("gradeFilter").value;
     const topic = document.getElementById("topicFilter").value;
     const difficulty = document.getElementById("difficultyFilter").value;
-    const searchInput = document.getElementById("wordSearch");
-    const search = searchInput ? searchInput.value.trim().toLowerCase() : "";
+    const search = document.getElementById("wordSearch")?.value.trim().toLowerCase() || "";
 
     const filtered = vocabulary.filter(function (item) {
       const matchesSearch = !search ||
@@ -622,14 +671,14 @@
     const list = document.getElementById("wordList");
 
     if (filtered.length === 0) {
-      list.innerHTML = "<p>No matching words found for selected filters.</p>";
+      list.innerHTML = "<p>No words have been added for these selections yet.</p>";
       return;
     }
 
     list.innerHTML = filtered.map(function (item) {
       const picture = safeUrl(item.picture);
       const pictureHTML = picture
-        ? `<img src="${escapeHTML(picture)}" alt="${escapeHTML(item.word)}" onerror="this.parentElement.innerHTML='🖼️ Image unavailable';">`
+        ? '<img src="' + escapeHTML(picture) + '" alt="' + escapeHTML(item.word) + '">'
         : "🖼️ Picture";
 
       return `
@@ -639,7 +688,7 @@
           <span class="part-of-speech">${escapeHTML(item.pos)}</span>
 
           <div class="meaning">
-            <strong>Simple Meaning:</strong> ${escapeHTML(item.meaning)}
+            <strong>Simple meaning:</strong> ${escapeHTML(item.meaning)}
           </div>
 
           <div class="example">
@@ -655,7 +704,7 @@
             Grade: ${escapeHTML(item.grade)} |
             Level: ${escapeHTML(item.difficulty)} |
             Topic: ${escapeHTML(item.topic)}<br>
-            Source: ${escapeHTML(item.source)}
+            Vocabulary Source: ${escapeHTML(item.source)}
           </div>
 
           <div class="word-actions">
@@ -676,7 +725,7 @@
 
   function speakWord(word) {
     if (!("speechSynthesis" in window)) {
-      alert("Speech synthesis is not supported by your browser.");
+      alert("Pronunciation is not supported by this browser.");
       return;
     }
 
@@ -689,7 +738,7 @@
 
   function getMyWords() {
     try {
-      return JSON.parse(localStorage.getItem("myEnglishWords") || "[]");
+      return JSON.parse(localStorage.getItem("myScrabbleWords") || "[]");
     } catch (error) {
       return [];
     }
@@ -698,12 +747,14 @@
   function saveMyWord(word) {
     const myWords = getMyWords();
 
-    if (!myWords.some(item => item.toLowerCase() === word.toLowerCase())) {
+    if (!myWords.some(function (item) {
+      return item.toLowerCase() === word.toLowerCase();
+    })) {
       myWords.push(word);
-      localStorage.setItem("myEnglishWords", JSON.stringify(myWords));
-      alert(`${word} was added to My Words ⭐`);
+      localStorage.setItem("myScrabbleWords", JSON.stringify(myWords));
+      alert(word + " was added to My Words ⭐");
     } else {
-      alert(`${word} is already in My Words.`);
+      alert(word + " is already in My Words.");
     }
 
     displayMyWords();
@@ -716,73 +767,95 @@
     const myWords = getMyWords();
 
     if (myWords.length === 0) {
-      list.innerHTML = "<p>No words saved yet.</p>";
+      list.innerHTML = "<p>No words have been added to My Words yet.</p>";
       return;
     }
 
     const savedVocabulary = myWords
-      .map(word => vocabulary.find(item => item.word.toLowerCase() === word.toLowerCase()))
+      .map(function (word) {
+        return vocabulary.find(function (item) {
+          return item.word.toLowerCase() === word.toLowerCase();
+        });
+      })
       .filter(Boolean);
 
     if (savedVocabulary.length === 0) {
-      list.innerHTML = "<p>Saved words are not in current vocabulary list.</p>";
+      list.innerHTML = "<p>Your saved words are no longer in the current vocabulary.</p>";
       return;
     }
 
-    list.innerHTML = savedVocabulary.map(item => `
-      <div class="word-card">
-        <div class="word-title">${escapeHTML(item.word)}</div>
-        <span class="part-of-speech">${escapeHTML(item.pos)}</span>
+    list.innerHTML = savedVocabulary.map(function (item) {
+      return `
+        <div class="word-card">
+          <div class="word-title">${escapeHTML(item.word)}</div>
+          <span class="part-of-speech">${escapeHTML(item.pos)}</span>
 
-        <div class="meaning">
-          <strong>Simple Meaning:</strong> ${escapeHTML(item.meaning)}
+          <div class="meaning">
+            <strong>Simple meaning:</strong> ${escapeHTML(item.meaning)}
+          </div>
+
+          <div class="example">
+            <strong>Example:</strong> ${escapeHTML(item.example)}
+          </div>
+
+          ${item.sinhala ? `
+            <div class="sinhala">
+              🇱🇰 <strong>Sinhala:</strong> ${escapeHTML(item.sinhala)}
+            </div>` : ""}
+
+          <div class="word-actions">
+            <button class="small-button" onclick="speakWord(${JSON.stringify(item.word)})">
+              🔊 Pronunciation
+            </button>
+            <button class="small-button light" onclick="practiceSpecific(${JSON.stringify(item.word)})">
+              🧠 Practise
+            </button>
+            <button class="small-button" onclick="removeMyWord(${JSON.stringify(item.word)})">
+              ❌ Remove
+            </button>
+          </div>
         </div>
-
-        <div class="example">
-          <strong>Example:</strong> ${escapeHTML(item.example)}
-        </div>
-
-        ${item.sinhala ? `
-          <div class="sinhala">
-            🇱🇰 <strong>Sinhala:</strong> ${escapeHTML(item.sinhala)}
-          </div>` : ""}
-
-        <div class="word-actions">
-          <button class="small-button" onclick="speakWord(${JSON.stringify(item.word)})">
-            🔊 Pronunciation
-          </button>
-          <button class="small-button light" onclick="practiceSpecific(${JSON.stringify(item.word)})">
-            🧠 Practise
-          </button>
-          <button class="small-button" onclick="removeMyWord(${JSON.stringify(item.word)})">
-            ❌ Remove
-          </button>
-        </div>
-      </div>
-    `).join("");
+      `;
+    }).join("");
   }
 
   function removeMyWord(word) {
-    const myWords = getMyWords().filter(item => item.toLowerCase() !== word.toLowerCase());
-    localStorage.setItem("myEnglishWords", JSON.stringify(myWords));
+    const myWords = getMyWords().filter(function (item) {
+      return item.toLowerCase() !== word.toLowerCase();
+    });
+
+    localStorage.setItem("myScrabbleWords", JSON.stringify(myWords));
     displayMyWords();
   }
 
   function practiceSpecific(word) {
-    const item = vocabulary.find(v => v.word.toLowerCase() === word.toLowerCase());
+    const item = vocabulary.find(function (v) {
+      return v.word.toLowerCase() === word.toLowerCase();
+    });
+
     if (!item) return;
 
     currentPracticeWord = item;
     document.getElementById("practiceWord").textContent = item.word;
-    document.getElementById("practiceAnswer").textContent = "Think about the meaning, then press SHOW ANSWER.";
-    document.getElementById("practice").scrollIntoView({ behavior: "smooth" });
+    document.getElementById("practiceAnswer").textContent =
+      "Think about the meaning, then press SHOW ANSWER.";
+
+    document.getElementById("practice").scrollIntoView({
+      behavior: "smooth"
+    });
   }
 
   function startPractice() {
     if (vocabulary.length === 0) return;
-    currentPracticeWord = vocabulary[Math.floor(Math.random() * vocabulary.length)];
-    document.getElementById("practiceWord").textContent = currentPracticeWord.word;
-    document.getElementById("practiceAnswer").textContent = "Think about the meaning, then press SHOW ANSWER.";
+
+    currentPracticeWord =
+      vocabulary[Math.floor(Math.random() * vocabulary.length)];
+
+    document.getElementById("practiceWord").textContent =
+      currentPracticeWord.word;
+
+    document.getElementById("practiceAnswer").textContent =
+      "Think about the meaning, then press SHOW ANSWER.";
   }
 
   function showPracticeAnswer() {
@@ -791,11 +864,12 @@
       return;
     }
 
-    document.getElementById("practiceAnswer").innerHTML = `
-      <strong>Meaning:</strong> ${escapeHTML(currentPracticeWord.meaning)}<br><br>
-      <strong>Example:</strong> ${escapeHTML(currentPracticeWord.example)}
-      ${currentPracticeWord.sinhala ? `<br><br>🇱🇰 <strong>Sinhala:</strong> ${escapeHTML(currentPracticeWord.sinhala)}` : ""}
-    `;
+    document.getElementById("practiceAnswer").innerHTML =
+      "<strong>Meaning:</strong> " + escapeHTML(currentPracticeWord.meaning) +
+      "<br><br><strong>Example:</strong> " + escapeHTML(currentPracticeWord.example) +
+      (currentPracticeWord.sinhala
+        ? "<br><br>🇱🇰 <strong>Sinhala:</strong> " + escapeHTML(currentPracticeWord.sinhala)
+        : "");
   }
 
   function addWord() {
@@ -811,16 +885,32 @@
     const picture = document.getElementById("pictureInput").value.trim();
 
     if (!word || !meaning || !example) {
-      alert("Please fill in the word, meaning, and example sentence.");
+      alert("Please enter the word, simple meaning and example sentence.");
       return;
     }
 
-    if (vocabulary.some(item => item.word.toLowerCase() === word.toLowerCase())) {
-      alert("This word already exists in vocabulary.");
+    const alreadyExists = vocabulary.some(function (item) {
+      return item.word.toLowerCase() === word.toLowerCase();
+    });
+
+    if (alreadyExists) {
+      alert("This word already exists in the learning vocabulary.");
       return;
     }
 
-    const newWord = { word, meaning, sinhala, pos, example, picture, grade, difficulty, source, topic };
+    const newWord = {
+      word: word,
+      meaning: meaning,
+      sinhala: sinhala,
+      pos: pos,
+      example: example,
+      picture: picture,
+      grade: grade,
+      difficulty: difficulty,
+      source: source,
+      topic: topic
+    };
+
     vocabulary.push(newWord);
     saveVocabulary();
 
@@ -831,7 +921,7 @@
     document.getElementById("pictureInput").value = "";
 
     displayWords();
-    alert(`${word} has been added successfully!`);
+    alert(word + " has been added to the learning vocabulary.");
   }
 
   displayWords();
